@@ -205,7 +205,35 @@
           }
         }
       }
-    }
+    },
+    {
+    "kind": "PersistentVolume",
+    "metadata":
+      {"name": "pv0001"}, 
+    "spec":
+      {"capacity":
+        {"storage": "5Gi"}, 
+      "accessModes":
+        ["ReadWriteOnce"], 
+      "nfs": 
+        {"path": "/home/admin/work/projetos/arquitetura/storagegateway/www/",
+        "server": "172.17.0.2"}, 
+      "persistentVolumeReclaimPolicy": "Retain"
+      } 
+    },
+    {
+      "kind": "PersistentVolumeClaim",
+      "metadata":
+        {"name": "nfs-claim1"},
+      "spec":
+        {"accessModes":
+          ["ReadWriteOnce"],
+        "resources":
+          {"requests":
+            {"storage": "5Gi"}
+          }
+        } 
+      }
   ],
   "parameters": [
     {
