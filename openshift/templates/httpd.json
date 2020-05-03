@@ -205,7 +205,7 @@
             "volumes":{
               "name": "pvol",
               "persistentVolumeClaim":{
-                "claimName": "claim1"}
+                "claimName": "nfs-claim1"}
             }
         
           }
