@@ -168,11 +168,13 @@
             }
           },
           "spec": {
-            "volumes":{
+            "volumes":[{
               "name": "pvol",
               "persistentVolumeClaim":{
-                "claimName": "nfs-claim1"}
-            },
+                "claimName": "nfs-claim1"
+              }
+            }]
+            ,
             "containers": [
               {
                 "name": "httpd-example",
@@ -182,10 +184,12 @@
                     "containerPort": 8080
                   }
                 ],
-                "volumeMounts":{
-                  "mountPath": "/etc/exports",
-                  "name": "pvol"
-                },
+                "volumeMounts":[
+                  {
+                    "mountPath": "/var/www/local/",
+                    "name": "pvol"
+                  }
+                ],
                 "readinessProbe": {
                   "timeoutSeconds": 3,
                   "initialDelaySeconds": 3,
